@@ -282,7 +282,8 @@ body {
     margin-left: 10px;
     color: white;
     background: transparent;
-    border: white solid 2px;
+    border: white solid 1px;
+    /* border: transparent; */
 
     cursor: pointer;
 }

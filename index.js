@@ -176,14 +176,23 @@ function ListItemDone (event) {
     eventTarg.classList.toggle("cancelLine");
 }
 
+const LIST_IF_OPEN = "IfOpen"
+
 function handleListHide() {
     const hideItems = listElement.querySelectorAll("li");
-    hideItems.forEach(item => item.classList.toggle("hidden"))
+    const titleText = taskHider.innerText
+    hideItems.forEach(classListHide)
     if (taskHider.innerText === "Open") {
         taskHider.innerText = "Todays Task"
+        localStorage.setItem(LIST_IF_OPEN, titleText)
+        
     } else {
         taskHider.innerText = "Open"
     }
+}
+
+function classListHide(item) {
+    item.classList.toggle("hidden");
 }
 
 const taskHider = document.querySelector(".listTitle");
