@@ -185,10 +185,17 @@ const OPENFALSE = "open"
 
 const openOrClosed = localStorage.getItem(LIST_IF_OPEN);
 
-if (openOrClosed !== taskHider.innerText) {
+if (openOrClosed !== taskHider.innerText && openOrClosed !== null) {
     classListHide(listElement);
-    taskHider.innerText = openOrClosed
+    taskHider.innerText = openOrClosed;
 }
+
+// if (openOrClosed === null) {
+// } else if (openOrClosed !== taskHider.innerText) {
+//     classListHide(listElement);
+//     taskHider.innerText = openOrClosed;
+// }
+
 // if (openOrClosed !== taskHider.innerText && taskHider.innerText === "Todays Task") {
 //     classListHide(listElement);
 //     taskHider.innerText = "Open"
