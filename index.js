@@ -176,18 +176,37 @@ function ListItemDone (event) {
     eventTarg.classList.toggle("cancelLine");
 }
 
+const taskHider = document.querySelector(".listTitle");
+const titleText = taskHider.innerText;
+
 const LIST_IF_OPEN = "IfOpen"
+const OPENTRUE = "Todays Task"
+const OPENFALSE = "open"
+
+const openOrClosed = localStorage.getItem(LIST_IF_OPEN);
+
+if (openOrClosed !== taskHider.innerText) {
+    classListHide(listElement);
+    taskHider.innerText = openOrClosed
+}
+// if (openOrClosed !== taskHider.innerText && taskHider.innerText === "Todays Task") {
+//     classListHide(listElement);
+//     taskHider.innerText = "Open"
+
+// } else if (openOrClosed === taskHider.innText) {
+//     console.log("TRUE!")
+// }
 
 function handleListHide() {
-    const hideItems = listElement.querySelectorAll("li");
-    const titleText = taskHider.innerText
-    hideItems.forEach(classListHide)
+    // const hideItems = listElement.querySelectorAll("li");
+    // hideItems.forEach(classListHide);
+    classListHide(listElement);
     if (taskHider.innerText === "Open") {
-        taskHider.innerText = "Todays Task"
-        localStorage.setItem(LIST_IF_OPEN, titleText)
-        
+        taskHider.innerText = "Todays Task";
+        localStorage.setItem(LIST_IF_OPEN, "Todays Task");
     } else {
-        taskHider.innerText = "Open"
+        taskHider.innerText = "Open";
+        localStorage.setItem(LIST_IF_OPEN, "Open");
     }
 }
 
@@ -195,12 +214,7 @@ function classListHide(item) {
     item.classList.toggle("hidden");
 }
 
-const taskHider = document.querySelector(".listTitle");
-
 taskHider.addEventListener("click", handleListHide)
-
-
-
 
 
 
