@@ -13,6 +13,20 @@ body {
     height: 100vh;
     /* background-color: grey; */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.fullpage img {
+    width: 120%;
+    height: auto;
+    display: flex;
+    /* justify-self: center; */
+    align-self: center;
+    /* filter: grayscale(80%); */
+    filter: blur(10px);
+    z-index: -1;
 }
 
 .header {
@@ -154,11 +168,11 @@ body {
 
 .timeAndList {
     width: 700px;
-    height: 400px;
+    height: 200px;
     position: absolute;
     left: calc(50% - 350px);
-    top: calc(50% - 200px);
-    background-color: lightslategray;
+    top: calc(50% - 100px);
+    /* background-color: lightslategray; */
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -314,6 +328,65 @@ body {
 
     cursor: default;
 }
+
+/* Weather */
+
+.weatherWrap {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}#weather {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: center; */
+    align-items: center;
+}
+.slash {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    margin: 0px 15px;
+    font-size: 20px;
+}
+
+.tempartureWrap {
+    display: flex;
+    height: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wind {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+    text-align: end;
+}.temp {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    font-size: 22px;
+    text-align: end;
+}
+.cityName {
+    height: fit-content;
+    padding-left: 40px;
+    width: fit-content;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+
 
 .hidden {
     display: none;

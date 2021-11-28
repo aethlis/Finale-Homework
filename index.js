@@ -23,6 +23,8 @@ function timeClock() {
 
 setInterval(timeClock, 1000);
 
+const fullpage = document.querySelector(".fullpage")
+
 const login = document.querySelector(".loginWrap");
 
 const loginBtn = document.querySelector(".login");
@@ -150,3 +152,68 @@ function ListItemDone (event) {
     const eventTarg = event.target;
     eventTarg.classList.toggle("cancelLine");
 }
+
+const quotes = [
+        {quote: "You will face many defeats in life, but never let yourself be defeated.",
+        author:"Maya Angelou"
+    },
+        {quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        author: "Nelson Mandela"
+    },
+        {quote: "In the end, it's not the years in your life that count. It's the life in your years.",
+        author: "Abraham Lincoln"
+    },
+        {quote: "Never let the fear of striking out keep you from playing the game.",
+        author: "Babe Ruth"
+    },
+        {quote: "Life is either a daring adventure or nothing at all.",
+        author: "Helen Keller"
+    },
+        {quote: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+        author: "Thomas A. Edison"
+    },
+        {quote: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+        author: "Thomas A. Edison"
+    },
+        {quote: "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.",
+        author: "Dr. Seuss"
+    }
+]
+
+// Background Image
+
+const backgroundImgs = ["img1.jpeg", "img2.jpeg", "img3.jpeg"];
+
+const chosenImage = backgroundImgs[Math.floor(Math.random() * backgroundImgs.length)];
+
+const bgImage = document.createElement("img");
+
+bgImage.src = `img/${chosenImage}`;
+
+fullpage.appendChild(bgImage);
+
+// Geo Location and Weather
+
+const API_KEY = "2be3fab2c5c52319f6934d2d106daf4d"
+
+function onGeoOk(position) {
+    const lat = position.coords.latitude
+    const lng = position.coords.longitude
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}8&lon=${lng}&appid=${API_KEY}&units=metric`
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const weather = document.querySelector(".wind")
+            const tempNumb = document.querySelector(".temp")
+            const city = document.querySelector(".cityName")
+            city.innerText = `in ${data.name}`;
+            weather.innerText = data.weather[0].main;
+            tempNumb.innerText = Math.round(data.main.temp);
+    })
+}
+
+function onGeoError() {
+    alert("Can't find you")
+}
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
