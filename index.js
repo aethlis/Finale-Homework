@@ -190,23 +190,7 @@ if (openOrClosed !== taskHider.innerText && openOrClosed !== null) {
     taskHider.innerText = openOrClosed;
 }
 
-// if (openOrClosed === null) {
-// } else if (openOrClosed !== taskHider.innerText) {
-//     classListHide(listElement);
-//     taskHider.innerText = openOrClosed;
-// }
-
-// if (openOrClosed !== taskHider.innerText && taskHider.innerText === "Todays Task") {
-//     classListHide(listElement);
-//     taskHider.innerText = "Open"
-
-// } else if (openOrClosed === taskHider.innText) {
-//     console.log("TRUE!")
-// }
-
 function handleListHide() {
-    // const hideItems = listElement.querySelectorAll("li");
-    // hideItems.forEach(classListHide);
     classListHide(listElement);
     if (taskHider.innerText === "Open") {
         taskHider.innerText = "Todays Task";
