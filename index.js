@@ -47,6 +47,18 @@ const LIST_ITEM = `List`;
 const savedUsername = localStorage.getItem(USERNAME_TYPE);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Login Handler Code (from here)
 
 if (savedUsername === null) {
@@ -78,6 +90,17 @@ function handleLogOut() {
 
 loginForm.addEventListener("submit", handleLogin);
 userIcon.addEventListener("click", handleLogOut)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -153,6 +176,30 @@ function ListItemDone (event) {
     eventTarg.classList.toggle("cancelLine");
 }
 
+function handleListHide() {
+    const hideItems = listElement.querySelectorAll("li");
+    hideItems.forEach(item => item.classList.toggle("hidden"))
+    if (taskHider.innerText === "Open") {
+        taskHider.innerText = "Todays Task"
+    } else {
+        taskHider.innerText = "Open"
+    }
+}
+
+const taskHider = document.querySelector(".listTitle");
+
+taskHider.addEventListener("click", handleListHide)
+
+
+
+
+
+
+
+
+
+// Random Quotes
+
 const quotes = [
         {quote: "You will face many defeats in life, but never let yourself be defeated.",
         author:"Maya Angelou"
@@ -180,9 +227,19 @@ const quotes = [
     }
 ]
 
+
+
+
+
+
+
+
+
+
+
 // Background Image
 
-const backgroundImgs = ["img1.jpeg", "img2.jpeg", "img3.jpeg"];
+const backgroundImgs = ["img2.jpeg", "img3.jpeg"];
 
 const chosenImage = backgroundImgs[Math.floor(Math.random() * backgroundImgs.length)];
 
@@ -191,6 +248,19 @@ const bgImage = document.createElement("img");
 bgImage.src = `img/${chosenImage}`;
 
 fullpage.appendChild(bgImage);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Geo Location and Weather
 
