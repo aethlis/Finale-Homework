@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+    background-color: grey;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.workList li div button::selection, .listTitle::selection, .loginBtn::selection ,#timeText::selection, .welcoming::selection, #dayCycle::selection, .greetingsText::selection {
+    background: transparent;
+}
+
+.fullpage {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: grey; */
+    display: flex;
+}
+
+.header {
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse nowrap;
+    align-content: center;
+}
+
+/* Login Form */
+
+.loginWrap {
+    width: 120px;
+    height: 100%;
+    margin-right: 30px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.login {
+    width: fit-content;
+    padding: 0px 17px;
+    height: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: solid white 2px;
+
+    cursor: pointer;
+}
+
+.loginBtn {
+    line-height: 30px;
+    width: fit-content;
+    height: 100%;
+    color: white;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+
+.greetingsWrap {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    margin-right: 30px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: right;
+    /* background-color: lightslategrey; */
+}
+
+.greetingsBox {
+    width: fit-content;
+    padding: 0px 17px;
+    height: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: solid white 2px;
+
+    cursor: pointer;
+}
+
+.welcoming {
+    width: fit-content;
+    color: white;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    font-size: 18px;
+
+    cursor: default;
+}
+
+.greetingsText {
+    line-height: 30px;
+    width: fit-content;
+    height: 100%;
+    color: white;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+
+
+
+.formWrap {
+    position: absolute;
+    right: 160px;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.loginForm { 
+    display: flex;
+    height: 34px;
+}
+
+.submitText {
+    all: unset;
+    margin: 0;
+    width: 160px;
+    height: 100%;
+    padding-left: 10px;
+    background-color: white;
+    color: black;
+}
+
+.submitButton {
+    color: white;
+    margin: 0;
+    border: solid white 2px;
+    width: 80px;
+    height: 100%;
+    background-color: unset;
+    border-radius: 0px 50px 50px 0px;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+
+
+/* Clock And To Do List */
+
+.timeAndList {
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    left: calc(50% - 350px);
+    top: calc(50% - 200px);
+    background-color: lightslategray;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.doListWrapper {
+    width: fit-content;
+    height: fit-content;
+}
+
+.inputList {
+    all: unset;
+    width: 580px;
+    margin-top: 10px;
+    padding: 0px 10px;
+    height: 30px;
+    color: white;
+    border-bottom: white 2px solid;
+    border-radius: 0px 0px 10px 10px;
+    background-color: transparent;
+    font-size: 18px;
+}
+.inputList::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+.inputList::selection {
+    background: black;
+}
+
+.workListWrapper {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    width: fit-content;
+    max-width: 530px;
+    height: fit-content;
+    max-height: calc(100vh - 130px);
+    overflow-y: hidden;
+    display: flex;
+    flex-flow: column;
+    /* background: rgb(95, 95, 95); */
+    opacity: 1;
+}
+.listTitle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    cursor: default;
+}
+.workList {
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    max-height: 100%;
+    all: unset;
+    padding-left: 10px;
+    padding-bottom: 0;
+    padding-right: 0;
+    border-bottom: solid 2px white;
+    /* justify-content: baseline; */
+    /* display: flex; */
+    overflow-y: scroll;
+}.workList::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+.workList li {
+    max-width: 100%;
+    height: fit-content;
+    color: white;
+    list-style-type: none;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: end;
+}.workList li div {
+    max-width: 100%;
+    max-height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: right;
+    align-items: center;
+}
+.workList li div span {
+    max-width: calc(100% - 35px);
+    width: fit-content;
+    height: fit-content;
+    /* display: flex; */
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    cursor: pointer;
+}
+
+.workList li div button {
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    margin-left: 10px;
+    color: white;
+    background: transparent;
+    border: white solid 2px;
+
+    cursor: pointer;
+}
+
+
+.clock {
+    width: fit-content;
+    height: 100px;
+    display: flex;
+    /* position: fixed; */
+    /* left: calc(100vw / 2 - 160px); */
+    /* top: calc(100vh / 2 - 50px); */
+}
+
+.timeWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+}
+
+#timeText {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    text-align: center;
+    font-size: 60pt;
+
+    cursor: default;
+}
+
+.sideMargins {
+    width: 60px;
+    height: 100%;
+}
+
+#dayCycle {
+    color: white;
+    font-size: 30pt;
+    line-height: 130px;
+    text-align: center;
+    font-weight: 500;
+
+    cursor: default;
+}
+
+.hidden {
+    display: none;
+}
+
+.cancelLine {
+    opacity: 0.5;
+    text-decoration: line-through;
+}

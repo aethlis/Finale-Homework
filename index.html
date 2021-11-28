@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="formWrap hidden">
+            <form name="loginForm" class="loginForm">
+                <input class="submitText" required maxlength="15" type="text" placeholder="Username">
+                <button class="submitButton">Login</button>
+            </form>
+        </div>
+        <div class="greetingsWrap hidden">
+            <div class="welcoming">Welcome</div>
+            <div class="greetingsBox">
+                <div class="greetingsText"></div>
+            </div>
+        </div>
+        <div class="loginWrap hidden">
+            <div class="login">
+                <div class="loginBtn">Login</div>
+            </div>
+        </div>
+    </div>
+    <div class="fullpage">
+        <div class="timeAndList">
+            <div class="clock">
+                <div class="sideMargins"></div>
+                <div class="timeWrap">
+                    <div id="timeText"></div>
+                </div>
+                <div class="sideMargins" id="dayCycle"></div>
+            </div>
+            <form name="toDoListForm" class="doListWrapper">
+                <input class="inputList" required maxlength="300" type="text" placeholder="What task do you have?">
+            </form>
+        </div>
+        <div class="quotes">
+            <div class="randomQuote"></div>
+        </div>
+        <div class="workListWrapper">
+            <ol class="workList"></ol>
+        </div>
+        <div class="listTitle">Todays Task</div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
