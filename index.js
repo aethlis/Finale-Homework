@@ -292,7 +292,7 @@ function onGeoOk(position) {
             const city = document.querySelector(".cityName")
             city.innerText = `in ${data.name}`;
             weather.innerText = data.weather[0].main;
-            tempNumb.innerText = Math.round(data.main.temp);
+            tempNumb.innerText =`${Math.round(data.main.temp)}°C`;
     })
 }
 
