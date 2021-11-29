@@ -253,7 +253,7 @@ const quotes = [
 
 // Background Image
 
-const backgroundImgs = ["img2.jpeg", "img3.jpeg"];
+const backgroundImgs = ["img4.jpeg", "img5.jpeg"];
 
 const chosenImage = backgroundImgs[Math.floor(Math.random() * backgroundImgs.length)];
 
