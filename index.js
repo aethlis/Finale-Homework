@@ -205,7 +205,7 @@ function classListHide(item) {
     item.classList.toggle("hidden");
 }
 
-taskHider.addEventListener("click", handleListHide)
+taskHider.addEventListener("click", handleListHide);
 
 
 
